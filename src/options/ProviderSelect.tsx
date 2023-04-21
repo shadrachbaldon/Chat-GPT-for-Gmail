@@ -51,7 +51,7 @@ const ConfigPanel: FC<ConfigProps> = ({ config, models }) => {
   }, [apiKeyBindings.value, model, models, tab])
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3" style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
       <Tabs value={tab} onChange={(v) => setTab(v as ProviderType)}>
         <Tabs.Item label="ChatGPT webapp" value={ProviderType.ChatGPT}>
           The API that powers ChatGPT webapp, free, but sometimes unstable
@@ -91,7 +91,7 @@ const ConfigPanel: FC<ConfigProps> = ({ config, models }) => {
           </div>
         </Tabs.Item>
       </Tabs>
-      <Button scale={2 / 3} ghost style={{ width: 20 }} type="success" onClick={save}>
+      <Button scale={2 / 3} ghost style={{ width: 20, marginTop: 20, backgroundColor: "#4caf50", color: "#fff", border: 0 }} type="success" onClick={save}>
         Save
       </Button>
     </div>
